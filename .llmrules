@@ -1,0 +1,34 @@
+# LLM Rules
+
+## Context-First Workflow
+
+1. **Before editing any file**: Check if `/.context/{same-path}.md` exists
+2. **If exists**: Read it first — understand scope before touching code
+3. **If not exists**: File is simple/new, proceed directly
+4. **After significant changes**: Update corresponding `.context/*.md`
+
+## Code Style
+
+- **No inline comments** unless logic is truly non-obvious
+- **Self-documenting**: Clear naming over explanations
+- **Minimalist**: Only what's needed, nothing extra
+- **No over-engineering**: Solve the current problem, not hypothetical futures
+
+## What NOT To Do
+
+- Don't add comments explaining what code does (make code clear instead)
+- Don't create abstractions for one-time operations
+- Don't add features beyond what's requested
+- Don't bloat context files — they're maps, not documentation
+
+## Token Efficiency
+
+- Read `.context/` summaries first, full source only when needed
+- Context tells you *where* to look, not *everything*
+- Keep responses focused and actionable
+
+## Communication
+
+- Be direct and concise
+- Ask clarifying questions early, not mid-implementation
+- When uncertain, investigate before assuming
